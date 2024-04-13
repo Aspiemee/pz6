@@ -25,8 +25,7 @@ except Exception:
 
 #функции для вывода фигур в консоль
 def triangle(h: int) -> None:
-    for i in range(1, h + 1):
-        print(" " * (h - i) + "*" * (2 * i - 1))
+    ...
 
 def square(h: int) -> None:
     for i in range(1, h + 1):
