@@ -25,7 +25,8 @@ except Exception:
 
 #функции для вывода фигур в консоль
 def triangle(h: int) -> None:
-    ...
+    for i in range(1, h + 1):
+        print(" " * (h - i) + "*" * (2 * i - 1))
 
 def square(h: int) -> None:
     ...
@@ -43,10 +44,10 @@ def hexagon(h: int) -> None:
 #блок для проверки ввода названия фигуры и вызова нужной функции 
 match name.lower():
     case 'квадрат':
-        triangle(height)
-    case 'треугольник':
         square(height)
-    case 'трапеция': 
+    case 'треугольник':
+        triangle(height)
+    case 'трапеция':
         trapezoid(height)
     case 'шестиугольник':
         hexagon(height)
