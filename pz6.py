@@ -1,23 +1,24 @@
 from argparse import ArgumentParser
 
-
 parser = ArgumentParser()
 parser.add_argument('--name', help='Название фигуры, например:'
                     'Квадрат, Треугольник, Трапеция, Шестиугольник',
                     type=str)
-parser.add_argument('--h', help='Высота выбранной фигуры', type=int)
+parser.add_argument('--h', help='Высота выбранной фигуры(минимальное значение равно 5)', type=int)
 args = parser.parse_args()
 
 name = args.name
+
+#проверка значения высоты 
 try: 
     height = args.h
     if height < 5: 
         raise ValueError
 except ValueError:
     print('Похоже что значение высоты меньше 5')
+    exit()
 
-
-
+#функции для вывода фигур в консоль
 def triangle(h: int) -> None:
     ...
 
@@ -34,6 +35,7 @@ def hexagon(h: int) -> None:
     for i in range(h - 1):
         print('*'*9)
     
+#блок для проверки ввода названия фигуры и вызова нужной функции 
 match name.lower():
     case 'квадрат':
         triangle(height)
