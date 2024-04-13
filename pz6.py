@@ -9,7 +9,7 @@ parser.add_argument('--h', help='Высота выбранной фигуры', 
 args = parser.parse_args()
 
 name = args.name
-height = args.height
+height = args.h
 
 
 def triangle(h: int) -> None:
@@ -19,14 +19,19 @@ def square(h: int) -> None:
     ...
     
 def trapezoid(h: int) -> None:
-    ...
-
+    if h < 5:
+        print('Высота шестиугольника не может быть меньше 5!')
+    else:
+        print(6*'*')
+        for i in range(1, h):
+            print('*' * (6+i))
+ 
 def hexagon(h: int) -> None:
     if h < 5:
         print('Высота шестиугольника не может быть меньше 5!')
     else:
-        print(' ' + '*' * 7)
-        for i in range(h - 2):
+        print('  ' + '*' * 5)
+        for i in range(h - 1):
             print('*'*9)
     
 match name.lower():
