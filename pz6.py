@@ -30,7 +30,7 @@ def triangle(h: int) -> None:
 
 def square(h: int) -> None:
     for i in range(1, h + 1):
-        print("*" * h)
+        print("*  " * h)
     
 def trapezoid(h: int) -> None:
     print(6*'*')
