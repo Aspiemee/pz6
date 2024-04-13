@@ -7,15 +7,20 @@ parser.add_argument('--name', help='Название фигуры, наприм�
 parser.add_argument('--h', help='Высота выбранной фигуры(минимальное значение равно 5)', type=int)
 args = parser.parse_args()
 
-name = args.name
 
-#проверка значения высоты 
+#проверка ввода данных
 try: 
+    if not args.name or not args.h:
+        raise Exception
+    name = args.name
     height = args.h
     if height < 5: 
         raise ValueError
 except ValueError:
     print('Похоже что значение высоты меньше 5')
+    exit()
+except Exception:
+    print('Вы не ввели какие то данные')
     exit()
 
 #функции для вывода фигур в консоль
