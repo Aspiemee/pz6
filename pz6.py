@@ -29,7 +29,8 @@ def triangle(h: int) -> None:
         print(" " * (h - i) + "*" * (2 * i - 1))
 
 def square(h: int) -> None:
-    ...
+    for i in range(1, h + 1):
+        print("*" * h)
     
 def trapezoid(h: int) -> None:
     print(6*'*')
